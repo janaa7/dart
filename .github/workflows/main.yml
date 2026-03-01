@@ -1,0 +1,21 @@
+name: Hello then Hi Jana
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello World
+        run: echo "Hello World"
+
+  hi-jana:
+    needs: hello-world
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hi Jana
+        run: echo "Hi Jana"
